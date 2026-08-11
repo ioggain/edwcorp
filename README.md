@@ -19,10 +19,11 @@ pensado para publicarse gratis en GitHub Pages y apuntar a **www.edwcorp.org**.
 | `catalogo.html` | Catálogo de 55 programas (10 y 16 horas) con buscador y filtros. |
 | `diagnostico.html` | Herramienta gratuita: diagnóstico de madurez en capacitación, con resultado y recomendación. |
 | `assets/logo.svg` | Logotipo oficial. También `logo-blanco.svg` (fondos oscuros) e `isotipo.svg` (favicon). |
-| `assets/omar.jpg`, `assets/isela.jpg` | Fotos de los socios. Falta `carlos.jpg` (ver pendientes). |
+| `assets/*.jpg` | Fotos de los socios y del edificio de las oficinas. |
 | `privacidad.html` | Aviso de privacidad (LFPDPPP). |
 | `terminos.html` | Términos de servicio. |
 | `legal.css` | Estilos compartidos por las dos páginas legales. |
+| `analytics.js` | Google Analytics y los eventos del sitio. Se activa pegando el ID en la primera línea. |
 | `apps-script/Codigo.gs` | Script de Google que recibe el formulario y lo guarda en una hoja. |
 | `MODELO-DE-NEGOCIO.md` | Documento interno: líneas de ingreso, precios, sostenibilidad. |
 | `PUBLICAR.md` | **Guía paso a paso para poner el sitio en el dominio.** |
@@ -102,7 +103,7 @@ Mientras no se configure, el formulario abre el correo del visitante con los dat
    var FORM_ENDPOINT = "";
    ```
 
-Las solicitudes llegan a **proyectos@edwcorp.org** (configurado en `AVISO_A` del script).
+Las solicitudes llegan a **admin@edwcorp.org** (configurado en `AVISO_A` del script).
 
 ---
 
@@ -119,12 +120,10 @@ Las solicitudes llegan a **proyectos@edwcorp.org** (configurado en `AVISO_A` del
   cada `<li>Nombre</li>` por `<li><img src="assets/logos/archivo.svg" alt="Nombre"></li>`.
   Añade a la hoja de estilos: `.marquee li img{height:34px;filter:grayscale(1);opacity:.55}`.
   Confirma que tienes autorización para mostrar cada marca.
-- **Faltan dos imágenes.** El sitio ya las tiene programadas: en cuanto guardes el archivo con
-  el nombre exacto, aparecen solas. Mientras no existan, la página no se rompe.
-  | Archivo | Qué es | Si falta |
-  |---|---|---|
-  | `assets/carlos.jpg` | Foto de Carlos Villalpando, cuadrada ~600×600 px | Se muestran sus iniciales |
-  | `assets/oficinas.jpg` | Foto del edificio, horizontal ~1600×1100 px | El mapa ocupa todo el ancho |
+- **Fotos.** Las de los socios y la del edificio ya están en `assets/`. Para cambiar cualquiera,
+  sube la nueva **con el mismo nombre** y listo. Si algún día falta la foto de un socio, el sitio
+  muestra sus iniciales en lugar de romperse; si falta la del edificio, el mapa ocupa todo el ancho.
+  La foto de Carlos está a 256×256 px: si consigues una de ~600×600 se verá más nítida en pantallas retina.
 - **Catálogo.** Los programas salen del *Portafolio de cursos, capacitaciones y entrenamiento*
   (Nov-2025), con las duraciones normalizadas a 10 y 16 horas. Están en el arreglo `CURSOS`
   dentro de `catalogo.html`: agregar uno es copiar una línea y cambiar los textos.
@@ -133,11 +132,11 @@ Las solicitudes llegan a **proyectos@edwcorp.org** (configurado en `AVISO_A` del
 
 ## ✅ Antes de publicar
 
-1. Guardar `assets/carlos.jpg` y `assets/oficinas.jpg`.
-2. Conectar el formulario (sección de arriba) para que las solicitudes lleguen a
-   `proyectos@edwcorp.org` sin depender del correo del visitante.
-3. Revisar en el celular: menú, botón de WhatsApp, diagnóstico y catálogo.
-4. Publicar en GitHub Pages y apuntar el dominio (sección de arriba).
+1. Conectar el formulario (sección de arriba) para que las solicitudes lleguen a
+   `admin@edwcorp.org` sin depender del correo del visitante.
+2. Revisar en el celular: menú, botón de WhatsApp, diagnóstico y catálogo.
+3. Publicar en GitHub Pages y apuntar el dominio (sección de arriba).
+4. Pegar el ID de Google Analytics en `analytics.js` (paso 8 de `PUBLICAR.md`).
 5. Después de publicar, dar de alta el sitio en
    [Google Search Console](https://search.google.com/search-console) y subir `sitemap.xml`.
 
