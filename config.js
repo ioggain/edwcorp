@@ -1,4 +1,4 @@
-/* ============================================================
+https://script.google.com/macros/s/AKfycbwHaqalRMtp0IdNoYeZZYIYv4Y-FEHTJjNm5D9fg6Hoi_uL7o6MpXwrBPLWFmMyfCg5/exec/* ============================================================
    EdwCorp — Configuración del sitio
 
    Este es el ÚNICO archivo que hay que tocar para conectar el
